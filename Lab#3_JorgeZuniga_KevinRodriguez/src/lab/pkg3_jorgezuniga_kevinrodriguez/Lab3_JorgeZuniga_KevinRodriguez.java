@@ -1,26 +1,32 @@
 package lab.pkg3_jorgezuniga_kevinrodriguez;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3_JorgeZuniga_KevinRodriguez {
+
     //metodo de lectura
     static Scanner sc = new Scanner(System.in);
-    static ArrayList contraseña =  new ArrayList();
-    static ArrayList cliente =  new ArrayList();
+    static ArrayList contraseña = new ArrayList();
+    static ArrayList username = new ArrayList();
+    static ArrayList cliente = new ArrayList();
+    static ArrayList empleado = new ArrayList();
+
     public static void main(String[] args) {
-        char resp='s';
-        while (resp == 's') {            
+        char resp = 's';
+        while (resp == 's') {
             int opcion;
             System.out.println("MENU\n"
                     + "1)Log In Administrador\n"
-                    + "2)Log In Cliente\n"
-                    + "3)Sing In Cliente\n"
+                    + "2)Log In Cliente/empleado(a)\n"
+                    + "3)Sing In Cliente/empleado(a)\n"
+                    + "4)Salida\n"
                     + "Elija su opcion:");
             opcion = sc.nextInt();
-            switch(opcion){
-                case 1:{
+            switch (opcion) {
+                case 1: {
                     String contra = "SUDO";
-                    String contraIngresada= "";
+                    String contraIngresada = "";
                     System.out.println("Ingrese la contraseña:");
                     contraIngresada = sc.nextLine();
                     if (contra.equals(contraIngresada)) {
@@ -31,37 +37,89 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                 + "3)Productos\n"
                                 + "Elija su opcion:");
                         op = sc.nextInt();
-                        while (op<1 || op >3) {                            
+                        while (op < 1 || op > 3) {
                             System.out.println("El numero ingresado no es correcto ingrese uno nuevo:");
                             op = sc.nextInt();
                         }
-                        switch(op){
-                            case 1:{
-                                
+                        switch (op) {
+                            case 1: {
+
                             }
                         }
                     }
-                }break;
-                case 2:{
-                    
-                }break;
-                case 3:{
-                    String nombre;
-                    String contra;
-                    System.out.println("Ingrese su nombre:");
-                    nombre = sc.nextLine();
-                    cliente.add(nombre);
-                    System.out.println("Ingrese su contraseña:");
-                    contra = sc.nextLine();
-                    contraseña.add(contra);
-                    
-                }break;
+                }
+                break;
+                case 2: {
+
+                }
+                break;
+                case 3: {
+                    int op;
+                    System.out.println("SubMENU\n"
+                            + "1)Cliente\n"
+                            + "2)Empleado\n"
+                            + "Elija la opcion que sera:");
+                    op = sc.nextInt();
+                    switch (op) {
+                        case 1: {
+                            String nombre, contra, UserName, correo;
+                            Long ID;
+                            System.out.println("Ingrese su nombre completo:");
+                            nombre = sc.nextLine();
+                            nombre = sc.nextLine();
+                            System.out.println("Ingrese su nombre de usuario:");
+                            UserName = sc.nextLine();
+                            System.out.println("Ingrese su contraseña:");
+                            contra = sc.nextLine();
+                            System.out.println("Ingrese su ID:");
+                            ID = sc.nextLong();
+                            System.out.println("Ingrese su correo electronico:");
+                            correo = sc.nextLine();
+                            correo = sc.nextLine();
+                            cliente.add(new Personas(nombre, contra, UserName, correo, ID));
+                            String salida = "";
+                            for (Object t : cliente) {
+                                salida += "" + cliente.indexOf(t) + "=> " + t + "\n";
+                            }
+                            System.out.println(cliente);
+                            
+                        }
+                        break;
+                        case 2: {
+                            String nombre, contra, UserName, correo;
+                            Long ID;
+                            System.out.println("Ingrese su nombre completo:");
+                            nombre = sc.nextLine();
+                            nombre = sc.nextLine();
+                            System.out.println("Ingrese su nombre de usuario:");
+                            UserName = sc.nextLine();
+                            System.out.println("Ingrese su contraseña:");
+                            contra = sc.nextLine();
+                            System.out.println("Ingrese su ID:");
+                            ID = sc.nextLong();
+                            System.out.println("Ingrese su correo electronico:");
+                            correo = sc.nextLine();
+                            correo = sc.nextLine();
+                            empleado.add(new Personas(nombre, contra, UserName, correo, ID));
+                            String salida = "";
+                            for (Object t : empleado) {
+                                salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
+                            }
+                            System.out.println(empleado);
+                            
+                        }
+                    }
+
+                }
+                break;
+                case 4:{
+                    System.out.println("Gracias por comprar con nosotros!! <3");
+                    resp = 'n';
+                    break;
+                }
             }
-            
-            
-            
-            
+
         }
     }
-    
+
 }
