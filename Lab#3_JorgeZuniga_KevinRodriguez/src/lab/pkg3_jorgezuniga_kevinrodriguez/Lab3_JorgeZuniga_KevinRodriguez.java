@@ -12,6 +12,8 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
     static ArrayList id = new ArrayList();
     static ArrayList cliente = new ArrayList();
     static ArrayList empleado = new ArrayList();
+    static ArrayList nombreLocales = new ArrayList();
+    static ArrayList tiendas = new ArrayList();
 
     public static void main(String[] args) {
         char resp = 's';
@@ -24,6 +26,10 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                     + "4)Salida\n"
                     + "Elija su opcion:");
             opcion = sc.nextInt();
+            while (opcion < 1 || opcion > 4) {
+                System.out.println("La opcion marcada no existe ingrese una nueva:");
+                opcion = sc.nextInt();
+            }
             switch (opcion) {
                 case 1: {
                     String contra = "SUDO";
@@ -33,7 +39,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                     contraIngresada = sc.nextLine();
                     if (contra.equals(contraIngresada)) {
                         int op;
-                        System.out.println("SubMENU\n"
+                        System.out.println("SubMENU1\n"
                                 + "1)Locales\n"
                                 + "2)Personas\n"
                                 + "3)Productos\n"
@@ -45,14 +51,72 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                         }
                         switch (op) {
                             case 1: {
-                                
+                                int opp;
+                                System.out.println("BubMenu2\n"
+                                        + "1)Tiendas\n"
+                                        + "2)quiosco\n"
+                                        + "3)Restaurantes\n"
+                                        + "Inggrese su opcion:");
+                                opp = sc.nextInt();
+                                while (opp < 1 || opp > 3) {
+                                    System.out.println("El numero ingresado no es correcto ingrese uno nuevo:");
+                                    opp = sc.nextInt();
+                                }
+                                switch (opp) {
+                                    case 1: {
+                                        int posi;
+                                        String nombre;
+                                        System.out.println("Ingrese el nombre de la tienda:");
+                                        nombre = sc.nextLine();
+                                        nombre = sc.nextLine();
+                                        while(nombreLocales.contains(nombre)){
+                                            System.out.println("El local ya existe ingrese uno nuevo:");
+                                            nombre = sc.nextLine();
+                                        }
+                                        nombreLocales.add(nombre);
+                                        String salida = "";
+                                        for (Object t : empleado) {
+                                            salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
+                                        }
+                                        System.out.println(salida);
+                                        System.out.println("Ingrese la posicion del empleado que desea agregarle a la tienda:");
+                                        posi = sc.nextInt();
+                                        tiendas.add(empleado.get(posi));
+                                    }
+                                    break;
+                                    case 2: {
+                                        String nombre;
+                                        System.out.println("Ingrese el nombre de la tienda del quiosco:");
+                                        nombre = sc.nextLine();
+                                        while (nombreLocales.contains(nombre)) {
+                                            System.out.println("La ID ya existe ingrese nuevamente:");
+                                            nombre = sc.nextLine();
+                                        }
+                                        nombreLocales.add(nombre);
+
+                                    }
+                                    break;
+                                    case 3: {
+
+                                    }
+                                    break;
+                                }
                             }
+                            break;
+                            case 2: {
+
+                            }
+                            break;
+                            case 3: {
+
+                            }
+                            break;
                         }
                     }
                 }
                 break;
                 case 2: {
-                    
+
                 }
                 break;
                 case 3: {
@@ -62,6 +126,10 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             + "2)Empleado\n"
                             + "Elija la opcion que sera:");
                     op = sc.nextInt();
+                    while (op < 1 || op > 2) {
+                        System.out.println("La opcion que marco no existe ingrese una nueva:");
+                        op = sc.nextInt();
+                    }
                     switch (op) {
                         case 1: {
                             String nombre, contra, UserName, correo;
@@ -81,7 +149,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             contra = sc.nextLine();
                             System.out.println("Ingrese su ID:");
                             ID = sc.nextLong();
-                            while(id.contains(ID)){
+                            while (id.contains(ID)) {
                                 System.out.println("La ID ya existe ingrese nuevamente:");
                                 ID = sc.nextLong();
                             }
@@ -117,7 +185,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             contra = sc.nextLine();
                             System.out.println("Ingrese su ID:");
                             ID = sc.nextLong();
-                            while(id.contains(ID)){
+                            while (id.contains(ID)) {
                                 System.out.println("La ID ya existe ingrese nuevamente:");
                                 ID = sc.nextLong();
                             }
