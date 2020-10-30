@@ -45,14 +45,14 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                         }
                         switch (op) {
                             case 1: {
-
+                                
                             }
                         }
                     }
                 }
                 break;
                 case 2: {
-
+                    
                 }
                 break;
                 case 3: {
@@ -71,9 +71,9 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             nombre = sc.nextLine();
                             System.out.println("Ingrese su nombre de usuario:");
                             UserName = sc.nextLine();
-                            username.add(UserName);
                             while (username.contains(UserName)) {
-                                System.out.println("Ingrese un nuevo nombre de usuario: ");
+                                System.out.println("Nombre de usuario en uso\n"
+                                        + "Ingrese un nuevo nombre de usuario: ");
                                 UserName = sc.nextLine();
                             }
                             username.add(UserName);
