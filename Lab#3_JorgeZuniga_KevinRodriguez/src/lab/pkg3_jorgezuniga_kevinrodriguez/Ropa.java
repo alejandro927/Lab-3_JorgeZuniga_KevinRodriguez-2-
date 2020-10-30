@@ -45,10 +45,12 @@ public class Ropa extends Productos{
     public void setRopa(ArrayList Ropa) {
         this.Ropa = Ropa;
     }
-    
-    
+
     @Override
     public String toString() {
-        return "Ropa{" + "Ropa=" + Ropa + '}';
+        return "Ropa{" + "Ropa=" + Ropa + ", talla=" + talla + '}';
     }
-}
+    
+    
+   
+   }

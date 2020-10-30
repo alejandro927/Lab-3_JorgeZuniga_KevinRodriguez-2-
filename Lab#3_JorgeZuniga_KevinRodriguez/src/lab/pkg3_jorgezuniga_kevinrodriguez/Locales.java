@@ -41,7 +41,7 @@ public class Locales {
     }
 
     public void setEmpleados(ArrayList empleados) {
-        this.empleados = empleados;
+        this.empleados= empleados;
     }
 
     public ArrayList getProductos() {
