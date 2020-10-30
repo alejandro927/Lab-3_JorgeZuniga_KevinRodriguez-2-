@@ -64,12 +64,28 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                 }
                                 switch (opp) {
                                     case 1: {
-                                        int posi;
-                                        String nombre;
+                                        int opcion1;
+                                        System.out.println("MENU\n"
+                                                + "1)Agregar\n"
+                                                + "2)Modificar\n"
+                                                + "Ingrese su opcion:");
+                                        opcion1  =sc.nextInt();
+                                        switch(opcion1){
+                                            case  1:{
+                                                
+                                            }break;
+                                            case 2:{
+                                                
+                                            }break;
+                                        }
+                                        
+                                        
+                                        int posi,posi1;
+                                        String nombre,nombregenerente="";
                                         System.out.println("Ingrese el nombre de la tienda:");
                                         nombre = sc.nextLine();
                                         nombre = sc.nextLine();
-                                        while(nombreLocales.contains(nombre)){
+                                        while (nombreLocales.contains(nombre)) {
                                             System.out.println("El local ya existe ingrese uno nuevo:");
                                             nombre = sc.nextLine();
                                         }
@@ -81,19 +97,35 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                         System.out.println(salida);
                                         System.out.println("Ingrese la posicion del empleado que desea agregarle a la tienda:");
                                         posi = sc.nextInt();
-                                        tiendas.add(empleado.get(posi));
+                                        System.out.println("Ingrese la posicion del empleado que desea como gerente de la tienda::");
+                                        posi1 = sc.nextInt();
+                                        if ("".equals(nombregenerente)) {
+                                            nombregenerente = ((Personas)empleado.get(posi1)).getNombre();
+                                        }
+                                        //tiendas.add(((Personas)empleado.get(posi)).getNombre());
+                                        tiendas.add(new Locales(nombre, empleado, id, nombregenerente));
+                                        empleado.remove(posi);
+                                        String salida1 = "";
+                                        System.out.println("Su lista de tiendas es:");
+                                        for (Object t : tiendas) {
+                                            salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
+                                        }
+                                        System.out.println(salida1);
                                     }
                                     break;
                                     case 2: {
                                         String nombre;
                                         System.out.println("Ingrese el nombre de la tienda del quiosco:");
                                         nombre = sc.nextLine();
-                                        while (nombreLocales.contains(nombre)) {
+                                        nombre = sc.nextLine();
+                                        if (nombreLocales.contains(nombre)) {
                                             System.out.println("La ID ya existe ingrese nuevamente:");
                                             nombre = sc.nextLine();
+                                        }else{
+                                            System.out.println("La tienda que escribio no existe");
+                                            break;
                                         }
-                                        nombreLocales.add(nombre);
-
+                                        
                                     }
                                     break;
                                     case 3: {
