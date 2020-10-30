@@ -18,21 +18,22 @@ public class Juguetes extends Productos{
 
     public Juguetes(String descrip, String Nombre, double precio,ArrayList Juguetes) {
         super(descrip, Nombre, precio);
-        this.Juguetes=Juguetes;
        
     }
-
-    public ArrayList getRopa() {
-        return Juguetes;
-    }
-
-    public void setRopa(ArrayList Ropa) {
-        this.Juguetes = Juguetes;
-    }
-    
-    public void Agregar(){
+     public void Agregar(){
         Juguetes.add(descrip);
         Juguetes.add(Nombre);
         Juguetes.add(precio);
     }  
+     
+    public ArrayList getRopa() {
+        return Juguetes;
+    }
+
+    public void setRopa(ArrayList Juguetes) {
+        this.Juguetes = Juguetes;
+    }
+    
+   
+    
 }

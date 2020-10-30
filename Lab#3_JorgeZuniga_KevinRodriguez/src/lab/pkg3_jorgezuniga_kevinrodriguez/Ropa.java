@@ -22,6 +22,12 @@ public class Ropa extends Productos{
         this.Ropa=Ropa;
        this.talla=talla;
     }
+    public void Agregar(){
+        Ropa.add(descrip);
+        Ropa.add(Nombre);
+        Ropa.add(precio);
+    } 
+
 
     public int getTalla() {
         return talla;
@@ -40,12 +46,7 @@ public class Ropa extends Productos{
         this.Ropa = Ropa;
     }
     
-    public void Agregar(){
-        Ropa.add(descrip);
-        Ropa.add(Nombre);
-        Ropa.add(precio);
-    } 
-
+    
     @Override
     public String toString() {
         return "Ropa{" + "Ropa=" + Ropa + '}';
