@@ -9,6 +9,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
     static Scanner sc = new Scanner(System.in);
     static ArrayList contraseña = new ArrayList();
     static ArrayList username = new ArrayList();
+    static ArrayList id = new ArrayList();
     static ArrayList cliente = new ArrayList();
     static ArrayList empleado = new ArrayList();
 
@@ -27,7 +28,8 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                 case 1: {
                     String contra = "SUDO";
                     String contraIngresada = "";
-                    System.out.println("Ingrese la contraseña:");
+                    System.out.println("Ingrese la contraseña de administrador:");
+                    contraIngresada = sc.nextLine();
                     contraIngresada = sc.nextLine();
                     if (contra.equals(contraIngresada)) {
                         int op;
@@ -69,20 +71,33 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             nombre = sc.nextLine();
                             System.out.println("Ingrese su nombre de usuario:");
                             UserName = sc.nextLine();
+                            username.add(UserName);
+                            while (username.contains(UserName)) {
+                                System.out.println("Ingrese un nuevo nombre de usuario: ");
+                                UserName = sc.nextLine();
+                            }
+                            username.add(UserName);
                             System.out.println("Ingrese su contraseña:");
                             contra = sc.nextLine();
                             System.out.println("Ingrese su ID:");
                             ID = sc.nextLong();
+                            while(id.contains(ID)){
+                                System.out.println("La ID ya existe ingrese nuevamente:");
+                                ID = sc.nextLong();
+                            }
+                            id.add(ID);
                             System.out.println("Ingrese su correo electronico:");
                             correo = sc.nextLine();
                             correo = sc.nextLine();
+                            contraseña.add(contra);
                             cliente.add(new Personas(nombre, contra, UserName, correo, ID));
                             String salida = "";
+                            System.out.println("Su lista es:");
                             for (Object t : cliente) {
                                 salida += "" + cliente.indexOf(t) + "=> " + t + "\n";
                             }
-                            System.out.println(cliente);
-                            
+                            System.out.println(salida);
+
                         }
                         break;
                         case 2: {
@@ -93,26 +108,37 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             nombre = sc.nextLine();
                             System.out.println("Ingrese su nombre de usuario:");
                             UserName = sc.nextLine();
+                            while (username.contains(UserName)) {
+                                System.out.println("Ingrese un nuevo nombre de usuario: ");
+                                UserName = sc.nextLine();
+                            }
+                            username.add(UserName);
                             System.out.println("Ingrese su contraseña:");
                             contra = sc.nextLine();
                             System.out.println("Ingrese su ID:");
                             ID = sc.nextLong();
+                            while(id.contains(ID)){
+                                System.out.println("La ID ya existe ingrese nuevamente:");
+                                ID = sc.nextLong();
+                            }
+                            id.add(ID);
                             System.out.println("Ingrese su correo electronico:");
                             correo = sc.nextLine();
                             correo = sc.nextLine();
+                            contraseña.add(contra);
                             empleado.add(new Personas(nombre, contra, UserName, correo, ID));
                             String salida = "";
                             for (Object t : empleado) {
                                 salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
                             }
-                            System.out.println(empleado);
-                            
+                            System.out.println(salida);
+
                         }
                     }
 
                 }
                 break;
-                case 4:{
+                case 4: {
                     System.out.println("Gracias por comprar con nosotros!! <3");
                     resp = 'n';
                     break;
