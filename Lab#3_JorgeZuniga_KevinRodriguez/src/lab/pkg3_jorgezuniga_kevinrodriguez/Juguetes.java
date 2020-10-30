@@ -33,6 +33,11 @@ public class Juguetes extends Productos{
     public void setRopa(ArrayList Juguetes) {
         this.Juguetes = Juguetes;
     }
+
+    @Override
+    public String toString() {
+        return "Juguetes{" + "Juguetes=" + Juguetes + '}';
+    }
     
    
     
