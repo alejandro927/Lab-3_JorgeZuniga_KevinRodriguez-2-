@@ -5,10 +5,49 @@
  */
 package lab.pkg3_jorgezuniga_kevinrodriguez;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Kevin
  */
-public class Ropa {
+public class Ropa extends Productos{
+    protected ArrayList Ropa=new ArrayList();
+        protected int talla;
+    public Ropa() {
+    }
+
+    public Ropa(String descrip, String Nombre, double precio,ArrayList Ropa,int talla) {
+        super(descrip, Nombre, precio);
+        this.Ropa=Ropa;
+       this.talla=talla;
+    }
+
+    public int getTalla() {
+        return talla;
+    }
+
+    public void setTalla(int talla) {
+        this.talla = talla;
+    }
+
     
+    public ArrayList getRopa() {
+        return Ropa;
+    }
+
+    public void setRopa(ArrayList Ropa) {
+        this.Ropa = Ropa;
+    }
+    
+    public void Agregar(){
+        Ropa.add(descrip);
+        Ropa.add(Nombre);
+        Ropa.add(precio);
+    } 
+
+    @Override
+    public String toString() {
+        return "Ropa{" + "Ropa=" + Ropa + '}';
+    }
 }
