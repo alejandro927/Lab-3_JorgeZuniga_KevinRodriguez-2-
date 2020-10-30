@@ -14,6 +14,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
     static ArrayList empleado = new ArrayList();
     static ArrayList nombreLocales = new ArrayList();
     static ArrayList tiendas = new ArrayList();
+    static ArrayList quioscos = new ArrayList();
 
     public static void main(String[] args) {
         char resp = 's';
@@ -69,48 +70,50 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                                 + "1)Agregar\n"
                                                 + "2)Modificar\n"
                                                 + "Ingrese su opcion:");
-                                        opcion1  =sc.nextInt();
-                                        switch(opcion1){
-                                            case  1:{
-                                                
-                                            }break;
-                                            case 2:{
-                                                
-                                            }break;
+                                        opcion1 = sc.nextInt();
+                                        switch (opcion1) {
+                                            case 1: {
+                                                int posi, posi1;
+                                                String nombre, nombregenerente = "", nombreemp;
+                                                System.out.println("Ingrese el nombre de la tienda:");
+                                                nombre = sc.nextLine();
+                                                nombre = sc.nextLine();
+                                                while (nombreLocales.contains(nombre)) {
+                                                    System.out.println("El local ya existe ingrese uno nuevo:");
+                                                    nombre = sc.nextLine();
+                                                }
+                                                nombreLocales.add(nombre);
+                                                String salida = "";
+                                                for (Object t : empleado) {
+                                                    salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
+                                                }
+                                                System.out.println(salida);
+                                                System.out.println("Ingrese la posicion del empleado que desea agregarle a la tienda:");
+                                                posi = sc.nextInt();
+                                                System.out.println("Ingrese la posicion del empleado que desea como gerente de la tienda::");
+                                                posi1 = sc.nextInt();
+                                                if ("".equals(nombregenerente)) {
+                                                    nombregenerente = ((Personas) empleado.get(posi1)).getNombre();
+                                                }
+                                                //tiendas.add(((Personas)empleado.get(posi)).getNombre());
+
+                                                nombreemp = ((Personas) empleado.get(posi1)).getNombre();
+                                                tiendas.add(new Locales(nombre, nombreemp, id, nombregenerente));
+                                                empleado.remove(posi);
+                                                String salida1 = "";
+                                                System.out.println("Su lista de tiendas es:");
+                                                for (Object t : tiendas) {
+                                                    salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
+                                                }
+                                                System.out.println(salida1);
+                                            }
+                                            break;
+                                            case 2: {
+
+                                            }
+                                            break;
                                         }
-                                        
-                                        
-                                        int posi,posi1;
-                                        String nombre,nombregenerente="";
-                                        System.out.println("Ingrese el nombre de la tienda:");
-                                        nombre = sc.nextLine();
-                                        nombre = sc.nextLine();
-                                        while (nombreLocales.contains(nombre)) {
-                                            System.out.println("El local ya existe ingrese uno nuevo:");
-                                            nombre = sc.nextLine();
-                                        }
-                                        nombreLocales.add(nombre);
-                                        String salida = "";
-                                        for (Object t : empleado) {
-                                            salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
-                                        }
-                                        System.out.println(salida);
-                                        System.out.println("Ingrese la posicion del empleado que desea agregarle a la tienda:");
-                                        posi = sc.nextInt();
-                                        System.out.println("Ingrese la posicion del empleado que desea como gerente de la tienda::");
-                                        posi1 = sc.nextInt();
-                                        if ("".equals(nombregenerente)) {
-                                            nombregenerente = ((Personas)empleado.get(posi1)).getNombre();
-                                        }
-                                        //tiendas.add(((Personas)empleado.get(posi)).getNombre());
-                                        tiendas.add(new Locales(nombre, empleado, id, nombregenerente));
-                                        empleado.remove(posi);
-                                        String salida1 = "";
-                                        System.out.println("Su lista de tiendas es:");
-                                        for (Object t : tiendas) {
-                                            salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
-                                        }
-                                        System.out.println(salida1);
+
                                     }
                                     break;
                                     case 2: {
@@ -121,11 +124,12 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                         if (nombreLocales.contains(nombre)) {
                                             System.out.println("La ID ya existe ingrese nuevamente:");
                                             nombre = sc.nextLine();
-                                        }else{
+                                            quioscos.add(nombre);
+                                        } else {
                                             System.out.println("La tienda que escribio no existe");
                                             break;
                                         }
-                                        
+
                                     }
                                     break;
                                     case 3: {

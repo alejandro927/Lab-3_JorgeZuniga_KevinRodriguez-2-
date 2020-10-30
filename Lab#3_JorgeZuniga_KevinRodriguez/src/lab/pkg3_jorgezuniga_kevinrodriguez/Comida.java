@@ -25,7 +25,6 @@ public class Comida extends Productos{
         comida.add(precio);
     } 
 
-
     public ArrayList getComida() {
         return comida;
     }

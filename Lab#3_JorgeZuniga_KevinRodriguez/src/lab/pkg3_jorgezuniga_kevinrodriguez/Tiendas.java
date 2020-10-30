@@ -14,9 +14,7 @@ import java.util.ArrayList;
 public class Tiendas extends Locales{
     ArrayList <Ropa> ropa;
     ArrayList <Juguetes> Juguetes;
-
- 
-
+    
     public Tiendas(ArrayList<Ropa> ropa, ArrayList<Juguetes> Juguetes, String nombreLoc, ArrayList<Empleados> empleados, ArrayList<Productos> producto, String gerente) {
         super(nombreLoc, empleados, producto, gerente);
         this.ropa = ropa;
