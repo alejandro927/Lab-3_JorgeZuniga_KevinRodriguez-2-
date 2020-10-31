@@ -75,7 +75,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                         switch (opcion1) {
                                             case 1: {
                                                 int posi, posi1, precio;
-                                                String nombre, nombregenerente = "", nombreemp, nombproducto, descrip;
+                                                String nombre, nombregenerente = "", nombproducto, descrip;
                                                 System.out.println("Ingrese el nombre de la tienda:");
                                                 nombre = sc.nextLine();
                                                 nombre = sc.nextLine();
@@ -101,10 +101,9 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                                 nombproducto = sc.nextLine();
                                                 System.out.println("Ingrese una descripcion del producto:");
                                                 descrip = sc.nextLine();
-                                                descrip = sc.nextLine();
                                                 System.out.println("Ingrese el precio del producto:");
                                                 precio = sc.nextInt();
-                                                productos.add(new Productos(salida, nombre, precio));
+                                                productos.add(new Productos(descrip, nombproducto, precio));
                                                 tiendas.add(new Locales(nombre, empleado, productos, nombregenerente));
                                                 empleado.remove(posi);
                                                 String salida1 = "";
@@ -116,20 +115,68 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                             }
                                             break;
                                             case 2: {
-//                                                String salida1 = "";
-//                                                System.out.println("Su lista de tiendas es:");
-//                                                for (Object t : tiendas) {
-//                                                    salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
-//                                                }
-//                                                System.out.println(salida1);
-//                                                int op1;
-//                                                System.out.println("Elija su opcion que desea tener un quiosquito:");
-//                                                op = sc.nextInt();
-//                                                while(op<0 || op > tiendas.size()){
-//                                                    System.out.println("La opcion marcada no existe ingrese una nueva:");
-//                                                    op = sc.nextInt();
-//                                                }
-//                                                System.out.println("Ingrese");
+                                                String salida1 = "";
+                                                System.out.println("Su lista de tiendas es:");
+                                                for (Object t : tiendas) {
+                                                    salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
+                                                }
+                                                System.out.println(salida1);
+                                                int op1, posi;
+                                                String nombrelocal;
+                                                System.out.println("Ingrese la posicion que desea modificar:");
+                                                posi = sc.nextInt();
+                                                System.out.println("Que desea modificar?:\n"
+                                                        + "1)Nombre del local\n"
+                                                        + "2)Gerente\n"
+                                                        + "3)Producto\n"
+                                                        + "Ingrese su opcion:");
+                                                op1 = sc.nextInt();
+                                                switch (op1) {
+                                                    case 1: {
+                                                        System.out.println("Ingrese el nuevo nombre del local:");
+                                                        nombrelocal = sc.nextLine();
+                                                        nombrelocal = sc.nextLine();
+                                                        nombreLocales.set(posi, nombrelocal);
+                                                        ((Locales) tiendas.get(posi)).setNombre(nombrelocal);
+
+                                                    }
+                                                    break;
+                                                    case 2: {
+                                                        String salida = "", gerentex = "";
+                                                        int posix;
+                                                        for (Object t : empleado) {
+                                                            salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
+                                                        }
+                                                        System.out.println(salida);
+                                                        System.out.println("Ingrese la posicion del empleado que quiere para gerente:");
+                                                        posix = sc.nextInt();
+                                                        gerentex = ((Personas) empleado.get(posix)).getNombre();
+                                                        ((Locales) tiendas.get(posi)).setNombre(gerentex);
+                                                    }
+                                                    break;
+                                                    case 3: {
+                                                        System.out.println("1)Nombre\n"
+                                                                + "2)Precio\n"
+                                                                + "Ingrese su opcion:");
+                                                        int opc = sc.nextInt();
+                                                        switch (opc) {
+                                                            case 1: {
+                                                                System.out.println("Ingrese e nuevo nombre:");
+                                                                String nombre1 = sc.nextLine();
+                                                                ((Productos) productos.get(posi)).setNombre(nombre1);
+
+                                                            }
+                                                            break;
+                                                            case 2: {
+                                                                System.out.println("Ingrese e nuevo precio:");
+                                                                int precio = sc.nextInt();
+                                                                ((Productos) productos.get(posi)).setPrecio(precio);
+                                                            }
+                                                            break;
+                                                        }
+                                                    }
+                                                    break;
+                                                }
                                             }
                                             break;
                                         }
@@ -137,66 +184,31 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                     }
                                     break;
                                     case 2: {
-                                        String salida1 = "";
-                                        System.out.println("Su lista de tiendas es:");
-                                        for (Object t : tiendas) {
-                                            salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
-                                        }
-                                        System.out.println(salida1);
-                                        int op1, posi;
-                                        String nombrelocal;
-                                        System.out.println("Ingrese la posicion que desea modificar:");
-                                        posi = sc.nextInt();
-                                        System.out.println("Que desea modificar?:\n"
-                                                + "1)Nombre del local\n"
-                                                + "2)Gerente\n"
-                                                + "3)Producto\n"
-                                                + "4)Empleado\n"
-                                                + "Ingrese su opcion:");
-                                        op1 = sc.nextInt();
-                                        switch(op1){
-                                            case 1:{
-                                                System.out.println("Ingrese el nuevo nombre del local:"); 
-                                                nombrelocal = sc.nextLine();
-                                                nombrelocal = sc.nextLine();
-                                                nombreLocales.set(posi, nombrelocal);
-                                                ((Locales)tiendas.get(posi)).setNombre(nombrelocal);
-                                                
-                                            }break;
-                                            case 2:{
-                                                String salida = "",gerentex="";
-                                                int posix;
-                                                for (Object t : empleado) {
-                                                    salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
-                                                }
-                                                System.out.println("Ingrese la posicion del empleado que quiere para gerente:");
-                                                posix = sc.nextInt();
-                                                gerentex = ((Personas)empleado.get(posix)).getNombre();
-                                                ((Locales)tiendas.get(posi)).setNombre(gerentex);
-                                            }break;
-                                            case 3:{
-                                                
-                                            }break;
-                                            case 4:{
-                                                
-                                            }break;
-                                        }
 
                                     }
                                     break;
                                     case 3: {
-
+                                        //restaurantes falto
                                     }
                                     break;
                                 }
                             }
                             break;
                             case 2: {
-
+                                //personas
+                                
+                                
+                                
                             }
                             break;
                             case 3: {
-
+                                //productos
+                                System.out.println("Los productos existentes son:");
+                                String salida = "";
+                                for (Object t : productos) {
+                                    salida += "" + productos.indexOf(t) + "=> " + t + "\n";
+                                }
+                                System.out.println(salida);
                             }
                             break;
                         }
