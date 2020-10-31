@@ -15,7 +15,7 @@ public class Tiendas extends Locales{
     ArrayList <Ropa> ropa;
     ArrayList <Juguetes> Juguetes;
     
-    public Tiendas(ArrayList<Ropa> ropa, ArrayList<Juguetes> Juguetes, String nombreLoc, ArrayList<Empleados> empleados, ArrayList<Productos> producto, String gerente) {
+    public Tiendas(ArrayList<Ropa> ropa, ArrayList<Juguetes> Juguetes, String nombreLoc, String empleados, ArrayList<Productos> producto, String gerente) {
         super(nombreLoc, empleados, producto, gerente);
         this.ropa = ropa;
         this.Juguetes = Juguetes;
