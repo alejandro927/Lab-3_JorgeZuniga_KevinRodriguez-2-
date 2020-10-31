@@ -40,14 +40,11 @@ public class Locales {
         return empleados;
     }
 
-<<<<<<< HEAD
+
     public void setEmpleados(ArrayList empleados) {
         this.empleados = empleados;
-=======
-    public void setEmpleado(String empleado) {
-        this.empleado=empleado;
->>>>>>> 395ae22ab6b0d8132877e49fbd9bfc5b5c8b557c
     }
+
 
 
     public ArrayList getProductos() {

@@ -164,7 +164,6 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                                                 System.out.println("Ingrese e nuevo nombre:");
                                                                 String nombre1 = sc.nextLine();
                                                                 ((Productos) productos.get(posi)).setNombre(nombre1);
-
                                                             }
                                                             break;
                                                             case 2: {
@@ -184,7 +183,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                     }
                                     break;
                                     case 2: {
-
+                                        //quioscos falto
                                     }
                                     break;
                                     case 3: {
@@ -196,9 +195,158 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                             break;
                             case 2: {
                                 //personas
-                                
-                                
-                                
+                                System.out.println("1)Modificar empleados\n"
+                                        + "2)Modificar clientes\n"
+                                        + "Ingrese su opcion");
+                                int opa = sc.nextInt();
+                                switch (opa) {
+                                    case 1: {
+                                        System.out.println("Su lista de empleados es:");
+                                        String salida = "";
+                                        for (Object t : empleado) {
+                                            salida += "" + empleado.indexOf(t) + "=> " + t + "\n";
+                                        }
+                                        System.out.println(salida);
+                                        System.out.println("Ingrese que posicion desea modificar:");
+                                        int posi = sc.nextInt();
+                                        System.out.println("Elija que desea modificar:\n"
+                                                + "1.Nombre completo\n"
+                                                + "2.Nombre de usuario\n"
+                                                + "3.Contrasena\n"
+                                                + "4.ID\n"
+                                                + "5.Su correo\n"
+                                                + "Ingrese su opcion:");
+                                        int cont = sc.nextInt();
+                                        switch (cont) {
+                                            case 1: {
+                                                String nombre;
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                nombre = sc.nextLine();
+                                                nombre = sc.nextLine();
+                                                ((Personas) empleado.get(posi)).setNombre(nombre);
+                                            }
+                                            break;
+                                            case 2: {
+                                                String UserName;
+                                                System.out.println("Ingrese su nuevo nombre de usuario:");
+                                                UserName = sc.nextLine();
+                                                UserName = sc.nextLine();
+
+                                                while (username.contains(UserName)) {
+                                                    System.out.println("Nombre de usuario en uso\n"
+                                                            + "Ingrese un nuevo nombre de usuario: ");
+                                                    UserName = sc.nextLine();
+                                                }
+                                                ((Personas) empleado.get(posi)).setUserName(UserName);
+                                                username.set(posi, UserName);
+                                            }
+                                            break;
+                                            case 3: {
+                                                String contrax = "";
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                contrax = sc.nextLine();
+                                                contrax = sc.nextLine();
+                                                ((Personas) empleado.get(posi)).setContra(contrax);
+                                            }
+                                            break;
+                                            case 4: {
+                                                System.out.println("Ingrese su nueva ID:");
+                                                Long ID = sc.nextLong();
+                                                while (id.contains(ID)) {
+                                                    System.out.println("La ID ya existe ingrese nuevamente:");
+                                                    ID = sc.nextLong();
+                                                }
+                                                ((Personas) empleado.get(posi)).setID(ID);
+                                                id.set(posi, ID);
+                                            }
+                                            break;
+                                            case 5: {
+                                                String correo = "";
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                correo = sc.nextLine();
+                                                correo = sc.nextLine();
+                                                ((Personas) empleado.get(posi)).setCorreo(correo);
+                                            }
+                                            break;
+
+                                        }
+                                    }
+                                    break;
+                                    case 2: {
+                                        System.out.println("Su lista de clientes es:");
+                                        String salida = "";
+                                        for (Object t : cliente) {
+                                            salida += "" + cliente.indexOf(t) + "=> " + t + "\n";
+                                        }
+                                        System.out.println(salida);
+                                        System.out.println("Ingrese que posicion desea modificar:");
+                                        int posi = sc.nextInt();
+                                        System.out.println("Elija que desea modificar:\n"
+                                                + "1.Nombre completo\n"
+                                                + "2.Nombre de usuario\n"
+                                                + "3.Contrasena\n"
+                                                + "4.ID\n"
+                                                + "5.Su correo\n"
+                                                + "Ingrese su opcion:");
+                                        int cont = sc.nextInt();
+                                        switch (cont) {
+                                            case 1: {
+                                                String nombre;
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                nombre = sc.nextLine();
+                                                nombre = sc.nextLine();
+                                                ((Personas) cliente.get(posi)).setNombre(nombre);
+
+                                            }
+                                            break;
+                                            case 2: {
+                                                String UserName;
+                                                System.out.println("Ingrese su nuevo nombre de usuario:");
+                                                UserName = sc.nextLine();
+                                                UserName = sc.nextLine();
+
+                                                while (username.contains(UserName)) {
+                                                    System.out.println("Nombre de usuario en uso\n"
+                                                            + "Ingrese un nuevo nombre de usuario: ");
+                                                    UserName = sc.nextLine();
+                                                }
+                                                ((Personas) empleado.get(posi)).setUserName(UserName);
+                                                username.set(posi, UserName);
+                                            }
+                                            break;
+                                            case 3: {
+                                                String contrax = "";
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                contrax = sc.nextLine();
+                                                contrax = sc.nextLine();
+                                                ((Personas) empleado.get(posi)).setContra(contrax);
+                                            }
+                                            break;
+                                            case 4: {
+                                                System.out.println("Ingrese su nueva ID:");
+                                                Long ID = sc.nextLong();
+                                                while (id.contains(ID)) {
+                                                    System.out.println("La ID ya existe ingrese nuevamente:");
+                                                    ID = sc.nextLong();
+                                                }
+                                                ((Personas) empleado.get(posi)).setID(ID);
+                                                id.set(posi, ID);
+                                            }
+                                            break;
+                                            case 5: {
+                                                String correo = "";
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                correo = sc.nextLine();
+                                                correo = sc.nextLine();
+                                                ((Personas) empleado.get(posi)).setCorreo(correo);
+                                            }
+                                            break;
+
+                                        }
+                                    }
+                                    break;
+                                }
+
                             }
                             break;
                             case 3: {
