@@ -8,6 +8,7 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
     //metodo de lectura
     static Scanner sc = new Scanner(System.in);
     static ArrayList contraseña = new ArrayList();
+    static ArrayList productos = new ArrayList();
     static ArrayList username = new ArrayList();
     static ArrayList id = new ArrayList();
     static ArrayList cliente = new ArrayList();
@@ -73,8 +74,8 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                         opcion1 = sc.nextInt();
                                         switch (opcion1) {
                                             case 1: {
-                                                int posi, posi1;
-                                                String nombre, nombregenerente = "", nombreemp;
+                                                int posi, posi1,precio;
+                                                String nombre, nombregenerente = "", nombreemp,nombproducto,descrip;
                                                 System.out.println("Ingrese el nombre de la tienda:");
                                                 nombre = sc.nextLine();
                                                 nombre = sc.nextLine();
@@ -95,10 +96,17 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                                 if ("".equals(nombregenerente)) {
                                                     nombregenerente = ((Personas) empleado.get(posi1)).getNombre();
                                                 }
-                                                //tiendas.add(((Personas)empleado.get(posi)).getNombre());
-
                                                 nombreemp = ((Personas) empleado.get(posi1)).getNombre();
-                                                tiendas.add(new Locales(nombre, nombreemp, id, nombregenerente));
+                                                System.out.println("Ingrese el nombre del producto:");
+                                                nombproducto = sc.nextLine();
+                                                nombproducto = sc.nextLine();
+                                                System.out.println("Ingrese una descripcion del producto:");
+                                                descrip = sc.nextLine();
+                                                descrip = sc.nextLine();
+                                                System.out.println("Ingrese el precio del producto:");
+                                                precio = sc.nextInt();
+                                                productos.add(new Productos(salida, nombre, precio));
+                                                tiendas.add(new Locales(nombre, empleado, id, nombregenerente));
                                                 empleado.remove(posi);
                                                 String salida1 = "";
                                                 System.out.println("Su lista de tiendas es:");
@@ -109,7 +117,19 @@ public class Lab3_JorgeZuniga_KevinRodriguez {
                                             }
                                             break;
                                             case 2: {
-
+                                                String salida1="";
+                                                System.out.println("Su lista de tiendas es:");
+                                                for (Object t : tiendas) {
+                                                    salida1 += "" + tiendas.indexOf(t) + "=> " + t + "\n";
+                                                }
+                                                System.out.println(salida1);
+                                                int op1,posi;
+                                                System.out.println("Ingrese la posicion que desea modificar:");
+                                                posi = sc.nextInt();
+                                                System.out.println("Que desea modificar?:\n"
+                                                        + "1)Nombre del local\n"
+                                                        + "2)gerente\n"
+                                                        + "");
                                             }
                                             break;
                                         }

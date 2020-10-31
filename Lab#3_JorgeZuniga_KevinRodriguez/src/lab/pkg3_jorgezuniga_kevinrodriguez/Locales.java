@@ -13,19 +13,17 @@ import java.util.ArrayList;
  */
 public class Locales {
     protected String nombreLoc;
-    //protected ArrayList <Empleados> empleados=new ArrayList();
+    protected ArrayList <Empleados> empleados=new ArrayList();
     protected ArrayList <Productos>producto=new ArrayList();
     protected String gerente;
-    protected String empleado;
-    
 
     public Locales(String nombreLocal) {
         this.nombreLoc = nombreLocal;
     }
 
-    public Locales(String nombreLoc,String empleado, ArrayList <Productos>producto,  String gerente) {
+    public Locales(String nombreLoc,ArrayList <Empleados> empleados, ArrayList <Productos>producto,  String gerente) {
         this.nombreLoc = nombreLoc;
-        this.empleado=empleado;
+        this.empleados=empleados;
         this.producto=producto;
         this.gerente = gerente;
     }
@@ -35,15 +33,15 @@ public class Locales {
     }
 
     public void setNombre(String nombreLocal) {
-        this.nombreLoc = nombreLocal;
+        this.nombreLoc = nombreLoc;
     }
 
-    public String getEmpleado() {
-        return empleado;
+    public ArrayList getEmpleados() {
+        return empleados;
     }
 
-    public void setEmpleados(String empleado) {
-        this.empleado = empleado;
+    public void setEmpleados(ArrayList empleados) {
+        this.empleados = empleados;
     }
 
     public ArrayList getProductos() {
@@ -64,7 +62,7 @@ public class Locales {
 
     @Override
     public String toString() {
-        return "Locales{" + "nombreLocal=" + nombreLoc + ", empleados=" + empleado + ", producto=" + producto + ", gerente=" + gerente + '}';
+        return "Locales{" + "nombreLocal=" + nombreLoc + ", empleados=" + empleados + ", producto=" + producto + ", gerente=" + gerente + '}';
     }
 
     
